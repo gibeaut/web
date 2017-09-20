@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Kelly Anna Irish</title>
+	
+<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+
+<style>
+h2 {
+  font: 400 70px/0.8 'Great Vibes', Helvetica, sans-serif;
+  color: #1fbed6;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+}
+h3 {
+ font: 400 60px/1.0 'Just Another Hand', Helvetica, sans-serif;
+  color: #4169e1;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var replaceAt = function(message, index, replacement){
+return message.substr(0, index) + replacement+ message.substr(index + replacement.length);
+}
+
+
+var showText = function (target, message, index, interval,change, letter) {   
+  if (index < message.length) {
+    $(target).append(message[index++]);
+    if (index == change+1 && message[change-1] != letter[0]) { 
+	$(target).text(message.substring(0,change-1));
+	message = replaceAt(message, change-1, letter);
+        index = --index;
+    }
+    if (message[change-1] == letter[0] && $(target).text().length < index) index--;
+    setTimeout(function () { showText(target, message, index, interval, change, letter); }, interval);
+  }
+}
+
+
+$( document ).ready(function() {
+    showText("#tagline","Building software one bag at a time!",0,125,24,'u');
+});
+</script>
+</head>
+
+<body>
+<div><h2>Kelly Anna Irish</h2></div>
+<h3><div id="tagline"></div><h3>
+
+</body>
+</html>
