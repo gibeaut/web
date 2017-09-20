@@ -4,20 +4,32 @@
 <head>
     <meta charset="utf-8" />
     <title>Kelly Anna Irish</title>
-	
+
 <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 
 <style>
 h2 {
   font: 400 70px/0.8 'Great Vibes', Helvetica, sans-serif;
   color: #1fbed6;
-  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
 }
 h3 {
- font: 400 60px/1.0 'Just Another Hand', Helvetica, sans-serif;
-  color: #4169e1;
-  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+ font: 400 30px/1.0 'Special Elite', cursive;
+  color: #2f4f4f;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+}
+a {
+  padding-left: 15px;
+}
+body {
+    text-align: center;
+}
+#page {
+  margin-left:auto;
+  margin-right:auto;
+  width:960px;
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -27,10 +39,10 @@ return message.substr(0, index) + replacement+ message.substr(index + replacemen
 }
 
 
-var showText = function (target, message, index, interval,change, letter) {   
+var showText = function (target, message, index, interval,change, letter) {
   if (index < message.length) {
     $(target).append(message[index++]);
-    if (index == change+1 && message[change-1] != letter[0]) { 
+    if (index == change+1 && message[change-1] != letter[0]) {
 	$(target).text(message.substring(0,change-1));
 	message = replaceAt(message, change-1, letter);
         index = --index;
@@ -48,8 +60,20 @@ $( document ).ready(function() {
 </head>
 
 <body>
-<div><h2>Kelly Anna Irish</h2></div>
-<h3><div id="tagline"></div><h3>
-
+  <div id="page">
+<div>
+  <h2>Kelly Anna Irish</h2>
+</div>
+<div>
+  <h3 id="tagline"><h3>
+</div>
+<div>
+  <a href="https://twitter.com/kelly_irish" target="_blank" title="Twitter"><img src="images/twitter-square-black-and-white-logo.png"  height="32" width="32"></a>
+  <a href="https://www.linkedin.com/in/kelly-irish-4199155b/" target="_blank" title="LinkedIn"><img src="images/11-linkedin-128.png" height="32" width="32"></a>
+  <a href="https://github.com/gibeaut" target="_blank" title="GitHub"><img src="images/GitHub-Mark-32px.png" height="32" width="32"></a>
+  <a href="https://www.instagram.com/kellyirish/" target="_blank" title="Instagram"><img src="images/glyph-logo_May2016.png" height="32" width="32"></a>
+  <a href="mailto:kellyirish@yahoo.com" title="Email"><img src="images/mail.svg" height="32" width="32"></a>
+</div>
+</div>
 </body>
 </html>
