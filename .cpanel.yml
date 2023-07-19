@@ -3,3 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/diy16fd2uoqp/public_html
     - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp -R images $DEPLOYPATH
